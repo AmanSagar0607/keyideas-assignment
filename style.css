@@ -1,0 +1,804 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+
+
+/* Header Responsive Styles */
+.navbar {
+  padding: 0.5rem 1rem;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar h4 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Hero Section Responsive Styles */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  /* min-height: 600px; */
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.showcase-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.background-text {
+  position: absolute;
+  font-size: clamp(2rem, 7vw, 4rem);
+  opacity: 1.5;
+  z-index: 0;
+}
+
+.ring-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.ring {
+  flex: 0 1 300px;
+  transition: transform 0.5s ease;
+}
+
+.ring img {
+  width: 100%;
+  height: auto;
+  max-width: 403px;
+}
+
+.product-info {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.product-title {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.product-price {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+
+/* Collection Section Responsive */
+.collection-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.collection-item img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Carousel Section Responsive */
+.carousel-section {
+  padding: 2rem 1rem;
+}
+
+.swiper-slide {
+  width: 280px;
+  height: auto;
+}
+
+/* Keep in Touch Section Responsive */
+.keep-in-touch-container {
+  padding: 2rem 1rem;
+}
+
+.image-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.email-input {
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem auto;
+}
+
+/* Footer Responsive */
+footer {
+  padding: 2rem 1rem;
+}
+
+
+/* keep in touch */
+.keep-in-touch-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.keep-in-touch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.content {
+  padding-right: 2rem;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.email-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.sign-up-btn {
+  background: #000;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+
+
+@media (max-width: 768px) {
+  .keep-in-touch {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .image-grid {
+    margin-top: 2rem;
+  }
+}
+
+/* product rotate */
+
+.hero-section {
+  padding: 2rem 0;
+  min-height: 100vh;
+  display: flex;
+}
+
+.showcase-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+}
+
+.background-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 7vw;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.034);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  top: 10%;
+  display: none;
+}
+
+.background-text:first-of-type {
+  display: block;
+}
+
+.ring-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ring {
+  position: absolute;
+  transition: transform 0.8s ease-in-out; /* Smooth transition for rotation */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.ring img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.8s ease-in-out; /* Smooth transition for image scaling */
+  border-radius: 50%;
+}
+
+.ring.center {
+  width: 360px;
+  z-index: 2;
+  transform: translateY(-40%);
+}
+
+.ring.left {
+  width: 240px;
+  transform: translateX(-200%) translateY(20%);
+  opacity: 0.7;
+}
+
+.ring.right {
+  width: 240px;
+  transform: translateX(200%) translateY(19%);
+  opacity: 0.7;
+}
+
+.product-info {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.product-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.product-price {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-offer {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.product-code {
+  color: #999;
+  margin-bottom: 1.5rem;
+}
+
+.view-details {
+  background: #000;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.view-details:hover {
+  background: #333;
+}
+
+.rotate-button {
+  position: absolute;
+  bottom: 10px;
+  right: 20%;
+  width: 50px; /* Set the size of the circle */
+  height: 50px; /* Set the size of the circle */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Makes the element circular */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers content inside the button */
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.social-icons {
+  position: absolute;
+  bottom: 45px;
+  left: 10%;
+  /* transform: translateX(0%); */
+  /* background: #000; */
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  transition: background 0.3s;
+}
+
+.social-icons a {
+  text-decoration: none;
+}
+
+
+@media (max-width: 1180px) {
+  .ring.center {
+    width: 250px;
+  }
+
+  .ring.left,
+  .ring.right {
+    width: 200px;
+  }
+
+  .product-title {
+    font-size: 2rem;
+  }
+
+  .product-price {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 980px) {
+  .rotate-button {
+    display: none;
+  }
+  .ring.center {
+    width: 230px;
+  }
+
+  .ring.left,
+  .ring.right {
+    width: 150px;
+  }
+
+  .product-title {
+    font-size: 2rem;
+  }
+
+  .product-price {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 686px) {
+  .ring.center {
+    width: 220px;
+  }
+
+  .ring.left,
+  .ring.right {
+    width: 90px;
+  }
+
+  .product-title {
+    font-size: 2rem;
+  }
+
+  .product-price {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 486px) {
+
+  .footer-extra {
+    display: block;
+  }
+  
+  .inquiry-logo,
+  .inquiry-text,
+  .feedback-logo,
+  .feedback-text,
+  .like-btn {
+    display: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ring.center {
+    width: 200px;
+    margin-top: -180px;
+    margin-left: 15px;
+  }
+
+  .ring.left {
+    width: 100px;
+    margin-top: -280px;
+    transform: translateX(-130%) translateY(20%);
+  }
+  .ring.right {
+    width: 100px;
+    margin-top: -280px;
+    transform: translateX(130%) translateY(20%);
+  }
+
+  .product-title {
+    font-size: 2rem;
+  }
+  
+  .product-info {
+    text-align: center;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-top: 400px;
+    width: 100%;
+    max-width: 100;
+    margin-top: 10px;
+  }
+
+  .product-price {
+    font-size: 1.5rem;
+  }
+  .collection-item h3 {
+    font-size: 2px; /* Smaller font size for h3 */
+  }
+
+  .collection-item p {
+    font-size: 0.65rem; /* Smaller font size for p */
+  }
+
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+    gap: 2px; /* Minimal space between items */
+  }
+
+  .collection-item {
+    padding: 0.1rem; /* Reduce padding for compactness */
+  }
+
+  
+}
+
+.rotate-button {
+  display: none;
+}
+
+
+@media (max-width: 720px) {
+  .social-icons {
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    /* transform: translateX(0%); */
+    /* background: #000; */
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    transition: background 0.3s;
+  }
+
+  .social-icons a {
+    text-decoration: none;
+  }
+}
+
+
+
+@media (max-width: 992px) {
+  .collection-grid {
+    grid-template-columns: repeat(0, 1fr);
+  }
+
+  .ring-container {
+    flex-wrap: wrap;
+  }
+
+  .ring {
+    flex: 0 1 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center elements horizontally */
+    align-items: center; /* Align elements vertically */
+    gap: 2rem; /* Add spacing between elements */
+    padding: 2rem; /* Add padding */
+    
+  }
+
+  .ring-container {
+    gap: 1rem;
+  }
+
+  .ring {
+    flex: 0 1 200px;
+  }
+
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .swiper-slide {
+    width: 240px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .hero-section {
+    min-height: 300px;
+  }
+
+  .ring-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ring {
+    flex: 0 1 180px;
+  }
+
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+
+  .swiper-slide {
+    width: 200px;
+  }
+}
+
+/* Social Icons Responsive */
+/* .social-icons {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  } */
+
+@media (max-width: 768px) {
+  .social-icons {
+    display: none;
+  }
+
+  .social-icons img {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .social-icons {
+    display: none;
+  }
+
+  .social-icons img {
+    display: none;
+  }
+
+  .collection-item img {
+    max-width: 100%;
+    /* height: 200px; */
+    /* width:100px; */
+     height: 0;
+     margin-bottom: 0;
+    
+  }
+}
+
+
+
+  /* menu */
+  /* Add these styles to your existing CSS */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.close-menu {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  background: none;
+  border: none;
+  font-size: 35px;
+  cursor: pointer;
+  color: #333;
+}
+
+.mobile-menu ul {
+  margin-top: 60px;
+  padding: 0;
+}
+
+.mobile-menu ul li {
+  margin:25px 20px;
+  
+}
+
+.mobile-menu h2 {
+  font-size: 24px;
+  color: #333;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  
+  align-items: center;
+  cursor: pointer;
+}
+
+.mobile-menu h2::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.mobile-footer {
+  position: absolute;
+  width: 100%;
+  padding: 20px;
+  border-top: 1px solid #eee;
+}
+
+.mobile-footer div {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.mobile-footer img {
+  margin-right: 20px;
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 400px) {
+  .navbar-toggler {
+    display: block !important;
+  }
+  
+  .mobile-menu {
+    display: none;
+  }
+  
+  .mobile-menu.active {
+    display: block;
+  }
+}
+
+
+/* keep in touch */
+.email-input {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  border-radius: 0;
+  transition: border-color 0.3s ease;
+}
+
+.email-input:focus {
+  border-bottom: 2px solid #000; /* Emphasizes the bottom border on focus */
+}
+
+.email-input::placeholder {
+  color: #aaa;
+}
+
+.sign-up-btn {
+  padding: 10px 30px;
+  width: 40%; /* Adjust width as needed */
+  max-width: 500px; /* Optional max width */
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-up-btn:hover {
+  background-color: #333;
+}
+
+/* header */
+  /* Center and style the brand name */
+  .brand-name {
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+
+
+  /* Align buttons to the right */
+  .action-buttons {
+    margin-left: auto;
+  }
+
+  /* Ensure buttons and icons scale appropriately */
+  .btn img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .brand-name {
+      font-size: 18px; /* Slightly smaller for mobile */
+    }
+    .btn img {
+      width: 22px;
+      height: 22px;
+      margin-right: -20px;
+    }
+  }
