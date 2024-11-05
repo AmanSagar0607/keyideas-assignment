@@ -426,7 +426,7 @@ footer {
 @media (max-width: 486px) {
 
   .footer-extra {
-    display: block;
+    display: flex;
   }
   
   .inquiry-logo,
