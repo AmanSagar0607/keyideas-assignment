@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Set cache headers for static assets -->
+<meta http-equiv="Cache-Control" content="max-age=31536000">
   <title>dimendSCAASI - Fine Jewelry Store</title>
   <meta name="description"
     content="Discover our elegant and unique fine jewelry collections, ranging from classic diamond studs to stylish pendants and dazzling bracelets." />
@@ -37,7 +39,6 @@
       border: none;
       background-color: transparent;
       color: black;
-      /* font-size: 1.5rem; */
       cursor: pointer;
       outline: none;
       padding: 0;
@@ -165,10 +166,6 @@
 
     /* Mobile Styles */
     @media (max-width: 768px) {
-      /* .mobile-menu {
-          display: block;
-        } */
-
       .collection-grid {
         grid-template-columns: repeat(0, 1fr);
       }
@@ -176,10 +173,6 @@
       .diamond-grid {
         grid-template-columns: 1fr;
       }
-
-      /* .hero-section {
-        height: 400px;
-      } */
     }
 
     /* Animations */
@@ -218,8 +211,6 @@
       align-items: center;
       justify-content: center;
       overflow-x: hidden;
-      /* width: 100%; */
-      /* padding: 0rem 0; */
     }
 
     .swiper-container {
@@ -250,8 +241,6 @@
 
     .slide-content {
       text-align: center;
-      /* border: 1px solid gray; */
-      /* padding: 0.1rem 0.1rem; */
     }
 
     .slide-content img {
@@ -790,6 +779,16 @@
       }
     }
   </style>
+
+
+<!-- 8. Add structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JewelryStore",
+  "name": "dimendSCAASI"
+}
+</script>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
